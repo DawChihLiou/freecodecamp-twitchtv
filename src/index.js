@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
+import App from './components/TwitchViewer';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <TwitchViewer />,
   document.getElementById('root')
 );
