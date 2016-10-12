@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { ChanelList } from '../components/ChanelList'
 
-const getVisibleChanles = (chanels, filter) => {
+const getVisibleChanels = (chanels, filter) => {
   switch (filter) {
     case 'SHOW_ALL':
       return chanels;

@@ -12,7 +12,7 @@ const Filter = (props) => {
       href="#"
       onClick={ e => {
           e.preventDefault()
-          onClick()
+          props.onClick()
       }}
     >
       { props.children }
