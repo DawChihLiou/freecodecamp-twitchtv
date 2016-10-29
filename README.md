@@ -2,19 +2,6 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find the most recent version of the guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-## Getting started
-To initialize the project, run
-```
-  npm install
-```
-to pull in the dependencies.
-
-To run the project in development mode, run
-```
-npm start
-```
-and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 # Introduction
 This [Free Code Camp challenge](https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) is developed with [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux), and [Bootstrap](http://getbootstrap.com/). It also depends on the following javascript libraries
 ```
@@ -36,4 +23,17 @@ This [Free Code Camp challenge](https://www.freecodecamp.com/challenges/use-the-
 ```
 It is a React/Redux exercise. The purpose is to understand how Redux works with React. This exercise demonstrates how to deal with synchronous and asynchronous actions in Redux and how to render React components with Redux state.
 
-The Twitchtv
+The Twitchtv application has two features: filter and a list of visible Twitchtv channels. The application fetches Twitchtv channels on page load. You can filter the list based on online/offline status.
+
+## Getting started
+To initialize the project, run
+```
+  npm install
+```
+to pull in the dependencies.
+
+To run the project in development mode, run
+```
+npm start
+```
+and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
