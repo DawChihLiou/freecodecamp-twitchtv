@@ -1,12 +1,30 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import twitchtvApp from './reducers'
-import TwitchViewer from './components/TwitchViewer';
-import './index.css';
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import createLogger from 'redux-logger'
+import reducer from './reducers'
+import TwitchViewer from './containers/TwitchViewer'
+import './index.css'
 
-let store = createStore(twitchtvApp)
+import {setVisibility, fetchChannels} from './actions'
+
+const logger = createLogger()
+
+const middleware = [ thunk ]
+if (process.env.NODE_ENV !== 'production') {
+  middleware.push(logger)
+}
+
+const configureStore = () => {
+  return createStore(
+    reducer,
+    applyMiddleware(...middleware)
+  )
+}
+
+const store = configureStore()
 
 render(
   <Provider store={ store }>
