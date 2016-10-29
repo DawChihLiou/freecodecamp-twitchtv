@@ -13,7 +13,7 @@ To run the project in development mode, run
 ```
 npm start
 ```
-and open http://localhost:3000 to view it in the browser.
+and open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 # Introduction
 This [Free Code Camp challenge](https://www.freecodecamp.com/challenges/use-the-twitchtv-json-api) is developed with [React](https://facebook.github.io/react/), [Redux](https://github.com/reactjs/redux), and [Bootstrap](http://getbootstrap.com/). It also depends on the following javascript libraries
@@ -34,4 +34,6 @@ This [Free Code Camp challenge](https://www.freecodecamp.com/challenges/use-the-
   }
 }
 ```
-It is a React/Redux exercise. The purpose is to understand how Redux work with React. This exercise demonstrate how to deal with synchronous and asynchronous actions in Redux and how to render React components with Redux state. 
+It is a React/Redux exercise. The purpose is to understand how Redux works with React. This exercise demonstrates how to deal with synchronous and asynchronous actions in Redux and how to render React components with Redux state.
+
+The Twitchtv
