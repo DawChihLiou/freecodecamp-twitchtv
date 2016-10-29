@@ -21,7 +21,7 @@ This [Free Code Camp challenge](https://www.freecodecamp.com/challenges/use-the-
   }
 }
 ```
-It is a React/Redux exercise. The purpose is to understand how Redux works with React. This exercise demonstrates how to deal with synchronous and asynchronous actions in Redux and how to render React components with Redux state.
+It is a React + Redux exercise. The purpose is to understand how does Redux work with React. This exercise demonstrates how to deal with synchronous and asynchronous actions in Redux and how to render React components with Redux state.
 
 The Twitchtv application has two features: filter and a list of visible Twitchtv channels. The application fetches Twitchtv channels on page load. You can filter the list based on online/offline status.
 
