@@ -35,6 +35,21 @@ export const fetchChannelsFail = chanel => {
   }
 }
 
+const fetchDummy = (dispatch, channel, imgPlaceholder) => {
+  fetch(`./dummy/${channel}.json`)
+    .then(res => {
+      if (res.status >= 400) dispatch(fetchChannelsFail())
+      return res.json()
+    })
+    .then(data => dispatch(fetchChannelsSuccess({
+      name: channel,
+      game: data.stream ? data.stream.game : null,
+      img: data.stream ? data.stream.channel.logo : imgPlaceholder,
+      url: data.stream? data.stream.channel.url : null,
+      status: data.stream.game ? 'online' : 'offline'
+    })))
+}
+
 export const fetchChannels = () => dispatch => {
   const channels       = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"]
   const imgPlaceholder = 'http://static-cdn.jtvnw.net/jtv_user_pictures/test_channel-profile_image-94a42b3a13c31c02-300x300.jpeg'
@@ -43,19 +58,29 @@ export const fetchChannels = () => dispatch => {
 
   // fetch for each channel
   channels.forEach((channel) => {
-    fetch(`https://api.twitch.tv/kraken/streams/${channel}`, {
-      headers: { 'Client-ID': 'mulc6mtgt7sn8b5pglkbvarzk5pd285' }
-    })
-      .then(res => {
-        if (res.status >= 400) dispatch(fetchChannelsFail())
-        return res.json()
-      })
-      .then(data => dispatch(fetchChannelsSuccess({
-        name: channel,
-        game: data.stream ? data.stream.game : null,
-        img: data.stream ? data.stream.channel.logo : imgPlaceholder,
-        url: data.stream? data.stream.channel.url : null,
-        status: data.stream ? 'online' : 'offline'
-      })))
+    /*
+       Fetching data from Twitch requires a Client ID.
+       you can checkout https://blog.twitch.tv/client-id-required-for-kraken-api-calls-afbb8e95f843#.bmmun43oz
+       to request one and make your request as below.
+
+       fetch(`https://api.twitch.tv/kraken/streams/${channel}`, {
+         headers: { 'Client-ID': '[YOUR_CLIENT_ID]' }
+       })
+         .then(res => {
+           if (res.status >= 400) dispatch(fetchChannelsFail())
+           return res.json()
+         })
+         .then(data => dispatch(fetchChannelsSuccess({
+           name: channel,
+           game: data.stream ? data.stream.game : null,
+           img: data.stream ? data.stream.channel.logo : imgPlaceholder,
+           url: data.stream? data.stream.channel.url : null,
+           status: data.stream ? 'online' : 'offline'
+         })))
+
+       For now, I am using dummy data to simulate the http request.
+     */
+     setTimeout(() => fetchDummy(dispatch, channel, imgPlaceholder), 1000)
+
   })
 }
