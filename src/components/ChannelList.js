@@ -6,6 +6,7 @@ const ChannelList = (props) => (
     { props.fetching && <span className="glyphicon glyphicon-refresh spin" aria-hidden="true"></span> }
     { !props.fetching && props.channels.map(channel =>
       <Channel
+        key={ channel.name }
         title={ channel.name }
         img={ channel.img }
         status={ channel.status }
