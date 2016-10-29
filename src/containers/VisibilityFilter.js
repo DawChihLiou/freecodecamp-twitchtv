@@ -2,23 +2,23 @@ import { connect } from 'react-redux'
 import { setVisibility } from '../actions'
 import Filter from '../components/Filter'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state, props) => {
+  // takes container's state & props and return children's props
   return {
-    active: ownProps.filter === state.visibility
+    active: props.visible === state.visible
   }
 }
-
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch, props) => {
+  // take dispatch & container's props and return children's props
   return {
     onClick: () => {
-      dispatch(setVisibility(ownProps.filter))
+      dispatch(setVisibility(props.visible))
     }
   }
 }
-
 const VisibilityFilter = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Filter)
+) (Filter)
 
 export default VisibilityFilter

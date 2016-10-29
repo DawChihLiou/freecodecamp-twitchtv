@@ -2,28 +2,19 @@ import React, { PropTypes } from 'react'
 
 const Filter = (props) => {
   if (props.active) {
-    return (
-      <span>{ props.children }</span>
-    )
+    return <h3 className="active">{ props.children }</h3>
   }
 
   return (
-    <a
-      href="#"
+    <a href="#"
       onClick={ e => {
-          e.preventDefault()
-          props.onClick()
+        e.preventDefault()
+        props.onClick()
       }}
     >
-      { props.children }
+      <h3>{ props.children }</h3>
     </a>
   )
-}
-
-Filter.propTypes = {
-  active: PropTypes.string.required,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
 }
 
 export default Filter

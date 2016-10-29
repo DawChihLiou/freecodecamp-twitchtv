@@ -8,8 +8,6 @@ import reducer from './reducers'
 import TwitchViewer from './containers/TwitchViewer'
 import './index.css'
 
-import {setVisibility, fetchChannels} from './actions'
-
 const logger = createLogger()
 
 const middleware = [ thunk ]

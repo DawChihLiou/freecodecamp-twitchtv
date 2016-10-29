@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 // import ChanelList from './VisibleChanelList'
-// import FilterList from './FilterList'
+import FilterList from '../components/FilterList'
 import '../App.css'
 
 const TwitchViewer = () => {
   return (
-    <div>
-      hi
+    <div className="container">
+      <FilterList />
     </div>
   );
 };
