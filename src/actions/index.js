@@ -61,7 +61,7 @@ export const fetchChannels = () => dispatch => {
     /*
        Fetching data from Twitch requires a Client ID.
        you can checkout https://blog.twitch.tv/client-id-required-for-kraken-api-calls-afbb8e95f843#.bmmun43oz
-       to request one and make your request as below.
+       to request one and make your http request as below.
 
        fetch(`https://api.twitch.tv/kraken/streams/${channel}`, {
          headers: { 'Client-ID': '[YOUR_CLIENT_ID]' }
@@ -81,6 +81,5 @@ export const fetchChannels = () => dispatch => {
        For now, I am using dummy data to simulate the http request.
      */
      setTimeout(() => fetchDummy(dispatch, channel, imgPlaceholder), 1000)
-
   })
 }
